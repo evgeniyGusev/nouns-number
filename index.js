@@ -1,4 +1,4 @@
-export default (arr, num) => {
+function getNoun(arr, num) {
   let rest = num % 10;
   if (rest === 1 && num !== 11) {
     return arr[0];
@@ -8,3 +8,4 @@ export default (arr, num) => {
     return arr[2];
   }
 }
+module.exports = getNoun;

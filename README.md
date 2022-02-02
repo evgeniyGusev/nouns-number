@@ -1,11 +1,11 @@
 ## Install
 
-`npm install --save nouns-number`
+`npm i nouns-number`
 
 ## Usage
 
 ```
-import getNoun from 'nouns-number';
+const getNoun = require('nouns-number');
 
 getNoun(['минута', 'минуты', 'минут'], 1); // -> минута
 getNoun(['минута', 'минуты', 'минут'], 2); // -> минуты
