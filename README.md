@@ -1,23 +1,32 @@
-## Install
+# nouns-number
+### A simple selection of the noun case by number
 
-`npm i nouns-number`
+[![npm](https://badgen.net/npm/v/nouns-number)](https://www.npmjs.com/package/nouns-number)
+[![npm](https://badgen.net/npm/dw/nouns-number)](https://www.npmjs.com/package/nouns-number)
+[![npm](https://badgen.net/npm/license/nouns-number)](https://www.npmjs.com/package/nouns-number)
 
-<hr>
+#### Syntax
+```javascript
+getNoun(array, number)
+````
 
-## Import
+#### Params
 
-```
-const getNoun = require('nouns-number');
-```
-Or you can use ES Modules syntax:
-```
-import getNoun from 'nouns-number';
-```
-<hr>
+| Param | Type     | Required | Description                          |
+|-------|----------|:--------:|--------------------------------------|
+| `array` | `string[]` |   true   | Array with nouns to select           |
+| `number` | `number`   |   true   | the number on which the noun depends |
 
-## Usage
-```
-getNoun(['минута', 'минуты', 'минут'], 1); // -> минута
-getNoun(['минута', 'минуты', 'минут'], 2); // -> минуты
-getNoun(['минута', 'минуты', 'минут'], 5); // -> минут
+#### Examples
+```javascript
+import { getNoun } from 'nouns-number'
+
+const array = ['минута', 'минуты', 'минут']
+
+getNoun(array, 1); // -> минута
+getNoun(array, 2); // -> минуты
+getNoun(array, 5); // -> минут
+
+const count = 2;
+const totalMessage = `Прошло всего ${count} ${getNoun(array, count)}`; // -> Прошло всего 2 минуты
 ```

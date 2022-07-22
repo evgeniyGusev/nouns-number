@@ -1,6 +1,6 @@
 {
   "name": "nouns-number",
-  "version": "1.1.2",
+  "type": "module",
   "description": "A simple selection of the noun case by number",
   "author": "evgeniyGusev",
   "person": {
@@ -8,12 +8,18 @@
     "email": "shchelkalinevgeniy@gmail.com",
     "url": "https://github.com/evgeniyGusev"
   },
-  "main": "index.js",
-  "homepage": "https://github.com/evgeniyGusev/nouns-number/blob/master/README.md",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/evgeniyGusev/nouns-number"
+  "main": "./src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "esbuild ./src/index.ts --bundle --minify --format=esm --outfile=./build/index.js",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
-  "keywords": ["noun", "nouns", "number", "numbers", "case", "numeral"],
-  "license": "ISC"
+  "devDependencies": {
+    "c8": "^7.12.0",
+    "esbuild": "^0.14.49",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
+    "vitest": "^0.18.1"
+  }
 }
